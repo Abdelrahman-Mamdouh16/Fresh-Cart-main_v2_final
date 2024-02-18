@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/Imgs/freshcart-logo.svg";
 import { TokenContext } from "./../../Context/TokenContext";
@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-main-light fixed-top shadow-sm">
+      <nav className="navbar navbar-expand-lg bg-main-light shadow-sm">
         <div className="container-sm">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="freshcart logo" />
@@ -83,37 +83,39 @@ export default function Navbar() {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
               {token !== null ? (
                 <>
-                  <li className="nav-item me-3">
-                    <Link className="nav-link" to="/wishlist">
-                      <i className="fa-regular fa-heart text-danger fs-5 position-relative">
-                        <span className="position-absolute badge bg-danger">
-                          {wishlistCount}
-                        </span>
-                      </i>{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item me-5">
-                    <Link className="nav-link" to="/cart">
-                      <i className="fa-solid fa-cart-shopping fs-5 text-main position-relative">
-                        <span className="position-absolute badge bg-danger">
-                          {cartCount}
-                        </span>
-                      </i>{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item me-0">
-                    <Link className="nav-link" to="/profile">
-                      <i className="fa-regular fa-circle-user fs-4 text-main"></i>
-                    </Link>
-                  </li>
-                  <li className="nav-item fw-semibold">
-                    <span
-                      className="nav-link cursor-pointer"
-                      onClick={userLogout}
-                    >
-                      Logout
-                    </span>
-                  </li>
+                  <div className="d-flex ">
+                    <li className="nav-item me-4">
+                      <Link className="nav-link" to="/wishlist">
+                        <i className="fa-regular fa-heart text-danger fs-5 position-relative">
+                          <span className="position-absolute badge bg-danger">
+                            {wishlistCount}
+                          </span>
+                        </i>{" "}
+                      </Link>
+                    </li>
+                    <li className="nav-item me-4">
+                      <Link className="nav-link" to="/cart">
+                        <i className="fa-solid fa-cart-shopping fs-5 text-main position-relative">
+                          <span className="position-absolute badge bg-danger">
+                            {cartCount}
+                          </span>
+                        </i>{" "}
+                      </Link>
+                    </li>
+                    <li className="nav-item me-0">
+                      <Link className="nav-link" to="/profile">
+                        <i className="fa-regular fa-circle-user fs-4 text-main"></i>
+                      </Link>
+                    </li>
+                  </div>
+                    <li className="nav-item fw-semibold">
+                      <span
+                        className="nav-link cursor-pointer"
+                        onClick={userLogout}
+                      >
+                        Logout
+                      </span>
+                    </li>
                 </>
               ) : (
                 <>
