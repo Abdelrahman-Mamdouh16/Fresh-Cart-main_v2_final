@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/Imgs/freshcart-logo.svg";
 import { TokenContext } from "./../../Context/TokenContext";
@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-main-light fixed-top shadow-sm">
+      <nav className="navbar navbar-expand-lg bg-main-light shadow-sm">
         <div className="container-sm">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="freshcart logo" />

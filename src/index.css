@@ -45,7 +45,7 @@ a:hover {
 }
 
 .bg-main {
-  background-color: rgb(17, 78, 109) !important;
+  background-color: #f8f9fa !important;
 }
 
 .bg-main-light {
@@ -151,4 +151,4 @@ button:disabled:hover {
 .scrollUp {
   right: 20px;
   bottom: 30px;
-}/*# sourceMappingURL=index.css.map */
+}
